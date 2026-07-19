@@ -90,7 +90,7 @@ export default function CVPage() {
             <a href="https://ae.linkedin.com/in/elsmoal-" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-electricViolet dark:hover:text-neonCyan transition-colors">
               <FaLinkedin className="w-3.5 h-3.5" /> linkedin.com/in/elsmoal-
             </a>
-            <a href="https://github.com/Elsmoal" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-electricViolet dark:hover:text-neonCyan transition-colors">
+            <a href="https://github.com/Elsmoil" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-electricViolet dark:hover:text-neonCyan transition-colors">
               <FaGithub className="w-3.5 h-3.5" /> github.com/Elsmoal
             </a>
           </motion.div>
@@ -227,7 +227,7 @@ export default function CVPage() {
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-heading font-semibold text-gray-900 dark:text-ghostWhite">{project.name}</h3>
                     <a
-                      href="https://github.com/Elsmoal"
+                      href="https://github.com/Elsmoil"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-electricViolet dark:hover:text-neonCyan transition-colors"

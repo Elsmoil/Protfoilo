@@ -18,7 +18,7 @@ const navLinks = [
 const socials = [
   {
     label: 'GitHub',
-    href: 'https://github.com/Elsmoal',
+    href: 'https://github.com/Elsmoil',
     icon: <FaGithub className="w-5 h-5" />,
     hoverColor: 'hover:text-neonCyan',
   },

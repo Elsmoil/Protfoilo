@@ -99,7 +99,7 @@ export default async function RootLayout({
       addressCountry: "AE",
     },
     sameAs: [
-      "https://github.com/Elsmoal",
+      "https://github.com/Elsmoil",
       "https://ae.linkedin.com/in/elsmoal-",
     ],
     hasCredential: [
