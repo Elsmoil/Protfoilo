@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "pages:build": "opennextjs-cloudflare build",
-    "preview": "opennextjs-cloudflare preview",
-    "cf:deploy": "opennextjs-cloudflare build && wrangler pages deploy"
+    "preview": "npm run pages:build && wrangler dev",
+    "cf:deploy": "npm run pages:build && wrangler deploy"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
