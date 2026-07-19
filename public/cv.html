@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elsmoal S. Ibrahim — CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 10.5pt;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.55;
+    }
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 48px;
+    }
+    /* Header */
+    .header { border-bottom: 2px solid #8A2BE2; padding-bottom: 16px; margin-bottom: 22px; }
+    .header h1 {
+      font-size: 24pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0d0d1a;
+    }
+    .header .subtitle {
+      font-size: 10pt;
+      color: #8A2BE2;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+      font-size: 9pt;
+      color: #555;
+    }
+    .contact-row a { color: #555; text-decoration: none; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      padding: 4px 10px;
+      border: 1px solid #2e8b2e;
+      border-radius: 50px;
+      font-size: 8.5pt;
+      color: #2e8b2e;
+    }
+    .badge::before { content: '●'; font-size: 7pt; }
+
+    /* Section */
+    .section { margin-bottom: 20px; }
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .section-heading h2 {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .section-heading .line {
+      flex: 1;
+      height: 1px;
+      background: #e5e5e5;
+    }
+    .section-heading .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #8A2BE2;
+      flex-shrink: 0;
+    }
+
+    /* Summary */
+    .summary p {
+      color: #333;
+      font-size: 10pt;
+      line-height: 1.65;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .skill-card {
+      padding: 10px 12px;
+      border: 1px solid #ebebeb;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .skill-card h3 {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8A2BE2;
+      margin-bottom: 6px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag {
+      padding: 2px 7px;
+      font-size: 8pt;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      color: #444;
+    }
+
+    /* Experience */
+    .exp-block {
+      padding-left: 14px;
+      border-left: 2px solid #d0a8ff;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .exp-block::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 4px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #8A2BE2;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+    }
+    .exp-title { font-size: 11pt; font-weight: 700; color: #0d0d1a; }
+    .exp-company { font-size: 9pt; color: #8A2BE2; font-weight: 600; }
+    .exp-meta { font-size: 8.5pt; color: #888; text-align: right; }
+    .exp-bullets { list-style: none; margin-top: 6px; }
+    .exp-bullets li {
+      font-size: 9.5pt;
+      color: #444;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+      line-height: 1.55;
+    }
+    .exp-bullets li::before { content: '›'; position: absolute; left: 2px; color: #8A2BE2; }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .project-card {
+      padding: 10px 12px;
+      border: 1px solid #ebebeb;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .project-card h3 { font-size: 10pt; font-weight: 700; color: #0d0d1a; margin-bottom: 3px; }
+    .project-card p { font-size: 8.5pt; color: #555; line-height: 1.5; margin-bottom: 6px; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 4px; }
+    .stack-tag {
+      padding: 1px 6px;
+      font-size: 7.5pt;
+      border-radius: 3px;
+      background: #f0e6ff;
+      color: #8A2BE2;
+      border: 1px solid #d8b4fe;
+    }
+
+    /* Credentials */
+    .cred-list { display: flex; flex-direction: column; gap: 8px; }
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      border: 1px solid #ebebeb;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .cred-icon { font-size: 16pt; flex-shrink: 0; }
+    .cred-title { font-size: 10pt; font-weight: 600; color: #0d0d1a; }
+    .cred-org { font-size: 8.5pt; color: #888; }
+    .cred-type {
+      margin-left: auto;
+      padding: 2px 8px;
+      font-size: 8pt;
+      border-radius: 50px;
+      border: 1px solid #d0a8ff;
+      color: #8A2BE2;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .cv-footer {
+      margin-top: 28px;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+      font-size: 8pt;
+      color: #aaa;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ── Print / PDF export ─────────────────────────────────────────────────────
+       @page with margin: 0 removes all browser-injected headers and footers
+       (date, URL, page numbers). Content padding is handled by .page so text
+       never touches the paper edge. size: A4 locks the output to 210×297 mm.
+    ── */
+    @page {
+      size: A4;
+      margin: 0;           /* ← eliminates browser header/footer chrome */
+    }
+
+    @media print {
+      /* Force background colours and images to print */
+      * {
+        -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+      }
+
+      /* Remove any screen-only chrome */
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        background: #fff !important;
+      }
+
+      /* The .page wrapper becomes the printable area.
+         18mm ≈ 51px at 96 dpi — comfortable margin on all sides. */
+      .page {
+        max-width: 100%;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 18mm 20mm;   /* top/bottom: 18mm, left/right: 20mm */
+        box-shadow: none;
+        border: none;
+      }
+
+      /* Prevent cards / blocks from splitting awkwardly across pages */
+      .section          { page-break-inside: avoid; break-inside: avoid; }
+      .exp-block        { page-break-inside: avoid; break-inside: avoid; }
+      .skill-card       { page-break-inside: avoid; break-inside: avoid; }
+      .project-card     { page-break-inside: avoid; break-inside: avoid; }
+      .cred-item        { page-break-inside: avoid; break-inside: avoid; }
+      .section-heading  { page-break-after:  avoid; break-after:  avoid; }
+
+      /* Keep hyperlinks readable — show the URL inline after the link text */
+      a[href]::after {
+        content: none;   /* set to ' (' attr(href) ')' if you want visible URLs */
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>ELSMOAL S. IBRAHIM</h1>
+    <p class="subtitle">Chief Technology Officer (CTO) | Independent Backend &amp; SaaS Architect</p>
+    <div class="contact-row">
+      <span>📧 <a href="mailto:contact@elsmoal.com">contact@elsmoal.com</a></span>
+      <span>📍 Al Ain, Abu Dhabi, UAE</span>
+      <span>🔗 <a href="https://ae.linkedin.com/in/elsmoal-">linkedin.com/in/elsmoal-</a></span>
+      <span>🐙 <a href="https://github.com/Elsmoal">github.com/Elsmoal</a></span>
+    </div>
+    <div class="badge">Official Software Development Freelance License · Abu Dhabi, UAE</div>
+  </div>
+
+  <!-- Professional Summary -->
+  <div class="section summary">
+    <div class="section-heading">
+      <div class="dot"></div>
+      <h2>Professional Summary</h2>
+      <div class="line"></div>
+    </div>
+    <p>
+      Independent Full-Stack Software Engineer and Backend Architect holding an official Software Development
+      Freelance License in Abu Dhabi. Specializing in building highly scalable, multi-tenant SaaS platforms,
+      high-concurrency microservices, and secure cryptography systems (AES/ECC). Proven track record in
+      orchestrating zero-downtime deployments, engineering robust monetization layers, and designing Zero-Trust
+      backend architectures for enterprise-grade applications and AI integrations.
+    </p>
+  </div>
+
+  <!-- Core Competencies -->
+  <div class="section">
+    <div class="section-heading">
+      <div class="dot"></div>
+      <h2>Core Competencies</h2>
+      <div class="line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Backend &amp; Databases</h3>
+        <div class="tags">
+          <span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Next.js</span>
+          <span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span>
+          <span class="tag">Qdrant</span><span class="tag">Appwrite</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Architecture &amp; Security</h3>
+        <div class="tags">
+          <span class="tag">Microservices</span><span class="tag">Multi-tenant SaaS</span>
+          <span class="tag">Zero-Trust</span><span class="tag">AES/ECC</span>
+          <span class="tag">RBAC</span><span class="tag">JWT</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>DevOps &amp; Infrastructure</h3>
+        <div class="tags">
+          <span class="tag">Linux (Debian/Kali)</span><span class="tag">Docker</span>
+          <span class="tag">Cloudflare</span><span class="tag">Vercel</span>
+          <span class="tag">SSH Dev-Envs</span><span class="tag">n8n</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Integrations</h3>
+        <div class="tags">
+          <span class="tag">Tap Payments</span><span class="tag">Ziina</span>
+          <span class="tag">WhatsApp API</span><span class="tag">Instagram API</span>
+          <span class="tag">Socket.io</span><span class="tag">AI Agents</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Experience -->
+  <div class="section">
+    <div class="section-heading">
+      <div class="dot"></div>
+      <h2>Professional Experience</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Chief Technology Officer (CTO)</div>
+          <div class="exp-company">Mulham AI</div>
+        </div>
+        <div class="exp-meta">2024 – Present<br/>Remote</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Architect the complete B2B SaaS infrastructure, establishing isolated deployment environments and securing internal workflows via Zero-Trust network access.</li>
+        <li>Design and implement API-driven AI integration patterns utilizing self-hosted vector databases (Qdrant) and Appwrite for scalable, cost-effective data state management.</li>
+        <li>Configure and manage enterprise IT infrastructure and communications, optimizing operational costs by routing secure workspace emails via Cloudflare and Zoho Workspace.</li>
+      </ul>
+    </div>
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Independent Software Engineer &amp; Backend Architect</div>
+          <div class="exp-company">Freelance (Official Abu Dhabi License)</div>
+        </div>
+        <div class="exp-meta">2024 – Present<br/>UAE</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Engineer comprehensive B2B SaaS platforms from initial infrastructure setup to deploying secure, scalable microservices and decoupled monolithic structures.</li>
+        <li>Develop custom n8n self-hosted workflows to automate omnichannel business processes, significantly reducing manual operational overhead for clients.</li>
+        <li>Design secure database schemas (PostgreSQL) and implement robust authentication alongside automated financial transaction protocols utilizing regional payment gateways (Tap Payments, Ziina).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Key Engineering Deployments -->
+  <div class="section">
+    <div class="section-heading">
+      <div class="dot"></div>
+      <h2>Key Engineering Deployments</h2>
+      <div class="line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>CipherVault</h3>
+        <p>Engineered a hybrid security system combining AES + ECC cryptography with steganography for multilayer data protection.</p>
+        <div class="project-stack">
+          <span class="stack-tag">TypeScript</span><span class="stack-tag">Python</span><span class="stack-tag">Cryptography</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Mithaq</h3>
+        <p>Built a multi-tenant B2B SaaS platform with a decoupled microfrontend architecture connecting TypeScript/React frontend to Python/Docker backend.</p>
+        <div class="project-stack">
+          <span class="stack-tag">TypeScript</span><span class="stack-tag">React</span><span class="stack-tag">Python</span><span class="stack-tag">Docker</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Tanseeq</h3>
+        <p>Developed a TypeScript-first application utilizing modern npm workflows and clean architectural patterns for highly maintainable codebases.</p>
+        <div class="project-stack">
+          <span class="stack-tag">TypeScript</span><span class="stack-tag">npm</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>LinkedPro</h3>
+        <p>Created a robust Python-based automation tool to streamline repetitive professional workflows and optimize web automation tasks.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Credentials & Education -->
+  <div class="section">
+    <div class="section-heading">
+      <div class="dot"></div>
+      <h2>Credentials &amp; Education</h2>
+      <div class="line"></div>
+    </div>
+    <div class="cred-list">
+      <div class="cred-item">
+        <span class="cred-icon">🔐</span>
+        <div>
+          <div class="cred-title">Official Software Development Freelance License</div>
+          <div class="cred-org">Abu Dhabi, UAE</div>
+        </div>
+        <span class="cred-type">Government License</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">🎓</span>
+        <div>
+          <div class="cred-title">Software Engineering Graduate</div>
+          <div class="cred-org">ALX</div>
+        </div>
+        <span class="cred-type">Degree</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-icon">🤖</span>
+        <div>
+          <div class="cred-title">AI Career Essentials Certification</div>
+          <div class="cred-org">ALX</div>
+        </div>
+        <span class="cred-type">Certificate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="cv-footer">
+    <span>© 2026 Elsmoal S. Ibrahim · All rights reserved.</span>
+    <span>elsmoal.com · contact@elsmoal.com</span>
+  </div>
+
+</div>
+</body>
+</html>
