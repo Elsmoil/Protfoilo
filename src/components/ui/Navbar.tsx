@@ -51,7 +51,7 @@ export default function Navbar() {
             : 'py-4 bg-transparent'
         }`}
       >
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 w-full flex items-center justify-between ${locale === 'ar' ? 'flex-row-reverse' : ''}`}>
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 w-full flex items-center justify-between ${locale !== 'ar' ? 'flex-row-reverse' : ''}`}>
           {/* Brand */}
           <div 
             onClick={() => scrollTo('hero')}
@@ -63,7 +63,7 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex flex-1 justify-center">
-            <div className={`flex items-center gap-1 bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-md backdrop-blur-md shadow-sm dark:shadow-none`}>
+            <div className={`flex items-center gap-1 bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-md backdrop-blur-md shadow-sm dark:shadow-none ${locale !== 'ar' ? 'flex-row-reverse' : ''}`}>
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -77,7 +77,7 @@ export default function Navbar() {
           </div>
 
           {/* CV link + Toggles + Hamburger */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className={`flex items-center gap-2 sm:gap-3 ${locale !== 'ar' ? 'flex-row-reverse' : ''}`}>
             <Link
               href={`/${locale}/cv`}
               className="hidden sm:flex items-center gap-1.5 px-4 py-1.5 rounded-md text-xs font-mono border border-brass/40 text-brass-light dark:text-brass hover:bg-brass/10 transition-all"
