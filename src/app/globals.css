@@ -1,15 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #050505;
-  --color-electricViolet: #8A2BE2;
-  --color-neonCyan: #00FFFF;
-  --color-ghostWhite: #F8F8FF;
-  --color-glass: rgba(255, 255, 255, 0.05);
-  
+  /* Dark mode: ink-blue blueprint sheet */
+  --color-void: #0B1220;
+  --color-gridline: rgba(148, 180, 220, 0.12);
+  --color-ghostWhite: #EAF0F8;
+
+  /* Light mode: tracing-paper blueprint sheet */
+  --color-paper: #F3F1EA;
+  --color-gridline-light: rgba(20, 40, 70, 0.10);
+  --color-ink: #141E30;
+
+  /* Shared brand constant across both modes */
+  --color-brass: #C98A4B;
+  --color-brass-light: #A66A32;
+
+  /* Legacy accent names repointed to the new palette, so existing
+     electricViolet/neonCyan classes across components repaint
+     automatically without touching every file individually. */
+  --color-electricViolet: #A66A32;
+  --color-neonCyan: #C98A4B;
+
+  --color-glass: rgba(148, 180, 220, 0.05);
+
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
   --font-heading: var(--font-space-grotesk);
+  --font-arabic: var(--font-ge-ss-two);
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -19,10 +36,31 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-gray-900 dark:bg-void dark:text-ghostWhite antialiased selection:bg-electricViolet selection:text-white;
+    @apply bg-paper text-ink dark:bg-void dark:text-ghostWhite antialiased selection:bg-brass selection:text-white;
+    background-image:
+      linear-gradient(var(--color-gridline-light) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-gridline-light) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .dark body {
+    background-image:
+      linear-gradient(var(--color-gridline) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-gridline) 1px, transparent 1px);
+  }
+  /* Arabic locale: override the font tokens so every font-sans / font-heading / font-mono
+     class automatically uses GE SS Two without fighting Tailwind's utility layer */
+  [dir="rtl"],
+  [lang="ar"] {
+    --font-sans: var(--font-ge-ss-two);
+    --font-heading: var(--font-ge-ss-two);
+    --font-mono: var(--font-ge-ss-two);
   }
 }
 
 @utility glass-panel {
-  @apply bg-white/80 dark:bg-glass backdrop-blur-md border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm dark:shadow-[0_0_15px_rgba(0,255,255,0.05)];
+  @apply bg-white/70 dark:bg-glass backdrop-blur-md border border-ink/10 dark:border-white/10 rounded-md shadow-sm dark:shadow-[0_0_15px_rgba(201,138,75,0.06)];
+}
+
+@utility text-accent {
+  @apply text-brass-light dark:text-brass;
 }

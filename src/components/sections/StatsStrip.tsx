@@ -8,12 +8,12 @@ export default function StatsStrip() {
 
   const stats = [
     {
-      icon: <Briefcase className="w-4 h-4 text-teal-600 dark:text-neonCyan shrink-0" />,
+      icon: <Briefcase className="w-4 h-4 text-brass-light dark:text-brass shrink-0" />,
       value: '5+',
       label: t('stat1'),
     },
     {
-      icon: <GraduationCap className="w-4 h-4 text-electricViolet shrink-0" />,
+      icon: <GraduationCap className="w-4 h-4 text-brass-light dark:text-brass shrink-0" />,
       value: 'ALX',
       label: t('stat2'),
     },
@@ -38,7 +38,7 @@ export default function StatsStrip() {
       className="relative z-10 w-full py-5 border-y border-black/10 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.02] backdrop-blur-sm overflow-hidden"
     >
       {/* Subtle glow line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-neonCyan/40 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-brass/40 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-black/10 dark:divide-white/5">
@@ -59,7 +59,7 @@ export default function StatsStrip() {
                 </span>
               </div>
               {/* Label */}
-              <p className="font-mono text-xs text-gray-500 dark:text-gray-400 leading-snug group-hover:text-teal-600 dark:group-hover:text-neonCyan transition-colors duration-200">
+              <p className="font-mono text-xs text-gray-500 dark:text-gray-400 leading-snug group-hover:text-brass-light dark:group-hover:text-brass transition-colors duration-200">
                 {stat.label}
               </p>
             </motion.div>

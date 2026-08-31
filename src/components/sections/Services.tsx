@@ -22,47 +22,43 @@ export default function Services() {
 
   const services = [
     {
-      icon: <Server className="w-8 h-8 text-teal-600 dark:text-neonCyan" />,
+      icon: <Server className="w-8 h-8 text-brass-light dark:text-brass" />,
       title: t('s1_title'),
       desc: t('s1_desc'),
       tags: ['Node.js', 'PostgreSQL', 'Redis', 'Microservices'],
-      accent: 'neonCyan',
-      glowColor: 'rgba(0,255,255,0.12)',
-      borderHover: 'rgba(0,255,255,0.35)',
+      glowColor: 'rgba(201,138,75,0.12)',
+      borderHover: 'rgba(201,138,75,0.35)',
     },
     {
-      icon: <Layers className="w-8 h-8 text-electricViolet" />,
+      icon: <Layers className="w-8 h-8 text-brass-light dark:text-brass" />,
       title: t('s2_title'),
       desc: t('s2_desc'),
       tags: ['Multi-tenant', 'TypeScript', 'Docker', 'Vercel'],
-      accent: 'electricViolet',
-      glowColor: 'rgba(138,43,226,0.12)',
-      borderHover: 'rgba(138,43,226,0.4)',
+      glowColor: 'rgba(166,106,50,0.12)',
+      borderHover: 'rgba(166,106,50,0.4)',
     },
     {
-      icon: <Cpu className="w-8 h-8 text-teal-600 dark:text-neonCyan" />,
+      icon: <Cpu className="w-8 h-8 text-brass-light dark:text-brass" />,
       title: t('s3_title'),
       desc: t('s3_desc'),
       tags: ['n8n (Self-hosted)', 'Python', 'Omnichannel APIs', 'AI Pipelines'],
-      accent: 'neonCyan',
-      glowColor: 'rgba(0,255,255,0.12)',
-      borderHover: 'rgba(0,255,255,0.35)',
+      glowColor: 'rgba(201,138,75,0.12)',
+      borderHover: 'rgba(201,138,75,0.35)',
     },
     {
-      icon: <Shield className="w-8 h-8 text-electricViolet" />,
+      icon: <Shield className="w-8 h-8 text-brass-light dark:text-brass" />,
       title: t('s4_title'),
       desc: t('s4_desc'),
       tags: ['AES/ECC', 'Steganography', 'Zero-Trust', 'RBAC'],
-      accent: 'electricViolet',
-      glowColor: 'rgba(138,43,226,0.12)',
-      borderHover: 'rgba(138,43,226,0.4)',
+      glowColor: 'rgba(166,106,50,0.12)',
+      borderHover: 'rgba(166,106,50,0.4)',
     },
   ];
 
   return (
     <section
       id="services"
-      className="relative w-full min-h-screen py-24 px-6 flex flex-col items-center justify-center z-10"
+      className="relative w-full py-16 sm:py-20 px-4 sm:px-6 flex flex-col items-center justify-center z-10"
     >
       <div className="max-w-6xl w-full">
         {/* Section heading */}
@@ -71,10 +67,10 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8 }}
-          className="mb-6 text-center md:text-left"
+          className="mb-6 text-center md:text-start"
         >
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-ghostWhite mb-4">
-            <span className="text-teal-600 dark:text-neonCyan">03.</span> {t('title')}
+            <span className="text-brass-light dark:text-brass">03.</span> {t('title')}
           </h2>
           <p className="font-mono text-gray-500 dark:text-gray-400 text-sm md:text-base max-w-2xl">
             {t('comment')}
@@ -83,16 +79,15 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* Abu Dhabi B2B callout */}
+        {/* Abu Dhabi license note */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-14 flex items-center gap-3 px-5 py-3 rounded-xl border border-green-500/20 bg-green-500/5 w-fit"
+          className="mb-14 flex items-center gap-3 px-4 py-2.5 rounded-md border border-brass/20 bg-brass/5 w-fit"
         >
-          <span className="text-lg">🔐</span>
-          <span className="font-mono text-sm text-green-400">{t('license_note')}</span>
+          <span className="font-mono text-sm text-brass-light dark:text-brass">{t('license_note')}</span>
         </motion.div>
 
         {/* Services grid */}
@@ -122,10 +117,10 @@ export default function Services() {
 
               {/* Icon + Title */}
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
+                <div className="p-3 rounded-sm bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
                   {svc.icon}
                 </div>
-                <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-ghostWhite group-hover:text-neonCyan transition-colors duration-200">
+                <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-ghostWhite group-hover:text-brass transition-colors duration-200">
                   {svc.title}
                 </h3>
               </div>
@@ -140,19 +135,27 @@ export default function Services() {
                 {svc.tags.map((tag, j) => (
                   <li
                     key={j}
-                    className="font-mono text-xs text-gray-500 dark:text-gray-400 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-3 py-1 rounded-full"
+                    className="font-mono text-xs text-gray-500 dark:text-gray-400 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-3 py-1 rounded-md"
                   >
                     {tag}
                   </li>
                 ))}
               </ul>
 
-              {/* CTA arrow */}
-              <div className="mt-2 flex items-center gap-1 font-mono text-xs text-gray-400 group-hover:text-teal-600 dark:group-hover:text-neonCyan transition-colors duration-200">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity">
-                  → {t('cta_label')}
-                </span>
-              </div>
+              {/* CTA arrow — WhatsApp link */}
+              <a
+                href={`https://wa.me/971559264344?text=${encodeURIComponent(
+                  `Hi Elsmoal, I'm interested in your ${svc.title} service. I'd like to discuss a project.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2 flex items-center gap-1 font-mono text-xs text-gray-400
+                group-hover:text-brass-light dark:group-hover:text-brass
+                opacity-0 group-hover:opacity-100 transition-all duration-200 w-fit"
+              >
+                → {t('cta_label')}
+              </a>
             </motion.div>
           ))}
         </motion.div>
@@ -163,7 +166,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-12 glass-panel p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-neonCyan/10"
+          className="mt-12 glass-panel p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-brass/10 text-center md:text-start"
         >
           <div>
             <p className="font-heading text-xl font-semibold text-gray-900 dark:text-ghostWhite mb-1">
@@ -173,16 +176,14 @@ export default function Services() {
               {t('banner_sub')}
             </p>
           </div>
-          <motion.button
-            whileHover={{ scale: 1.04, boxShadow: '0 0 20px rgba(0,255,255,0.3)' }}
-            whileTap={{ scale: 0.97 }}
+          <button
             onClick={() =>
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="shrink-0 px-8 py-3 rounded-full bg-gradient-to-r from-electricViolet to-neonCyan text-black font-mono font-bold tracking-widest uppercase text-sm transition-all cursor-pointer"
+            className="shrink-0 px-6 py-3 rounded-md bg-brass text-white font-mono text-sm transition-colors hover:bg-brass-light cursor-pointer"
           >
             {t('banner_cta')}
-          </motion.button>
+          </button>
         </motion.div>
       </div>
     </section>

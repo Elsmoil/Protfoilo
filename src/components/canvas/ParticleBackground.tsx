@@ -18,10 +18,10 @@ export default function ParticleBackground() {
       <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <CameraRig />
-        {/* جسيمات بلون النيون السماوي (Neon Cyan) */}
-        <Sparkles count={150} scale={12} size={2} speed={0.2} opacity={0.4} color="#00FFFF" />
-        {/* جسيمات بلون البنفسجي الكهربائي (Electric Violet) */}
-        <Sparkles count={100} scale={15} size={3} speed={0.1} opacity={0.3} color="#8A2BE2" />
+        {/* جسيمات بلون النحاسي الذهبي (Brass) */}
+        <Sparkles count={150} scale={12} size={2} speed={0.2} opacity={0.4} color="#C98A4B" />
+        {/* جسيمات بلون النحاسي الداكن (Brass-Light) */}
+        <Sparkles count={100} scale={15} size={3} speed={0.1} opacity={0.3} color="#A66A32" />
       </Canvas>
     </div>
   );

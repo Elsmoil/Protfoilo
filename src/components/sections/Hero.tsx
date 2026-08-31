@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import ParticleBackground from '../canvas/ParticleBackground';
 import { useTranslations } from 'next-intl';
 import { Download, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -12,8 +11,7 @@ export default function Hero() {
   const locale = (params?.locale as string) ?? 'en';
 
   return (
-    <section id="hero" className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden px-6">
-      <ParticleBackground />
+    <section id="hero" className="relative flex min-h-[70vh] pt-20 pb-10 w-full flex-col items-center justify-center overflow-hidden px-4 sm:px-6">
 
       <div className="z-10 flex max-w-4xl flex-col items-center text-center">
 
@@ -22,13 +20,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/5 backdrop-blur-sm"
+          className="flex items-center gap-2 mb-8 px-4 py-2 rounded-md border border-brass/20 bg-brass/5 backdrop-blur-sm"
         >
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-          </span>
-          <span className="font-mono text-xs text-green-700 dark:text-green-400 tracking-wide">
+          <span className="font-mono text-xs text-brass-light dark:text-brass tracking-wide">
             {t('availability')}
           </span>
         </motion.div>
@@ -39,12 +33,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' as const, delay: 0.15 }}
         >
-          <p className="font-mono text-teal-600 dark:text-neonCyan mb-4 tracking-widest uppercase text-sm md:text-base">
+          <p className="font-mono text-brass-light dark:text-brass mb-4 tracking-wide text-sm md:text-base">
             {t('status')}
           </p>
-          <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight mb-6 text-gray-900 dark:text-ghostWhite">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 text-gray-900 dark:text-ghostWhite">
             {t('title_1')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electricViolet to-neonCyan">
+            <span className="text-brass-light dark:text-brass">
               {t('title_highlight')}
             </span>
             <br />
@@ -72,18 +66,16 @@ export default function Hero() {
           {t('credentials')}
         </motion.p>
 
-        {/* Abu Dhabi Verified Badge */}
+        {/* Abu Dhabi License */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.38 }}
-          className="flex items-center gap-2 mb-10 px-4 py-2 rounded-full border border-electricViolet/40 bg-electricViolet/5 backdrop-blur-sm"
+          className="flex items-center gap-2 mb-10 px-4 py-2 rounded-md border border-brass/30 bg-brass/5"
         >
-          <span className="text-sm">🔐</span>
-          <span className="font-mono text-xs text-electricViolet tracking-wide">
+          <span className="font-mono text-xs text-brass-light dark:text-brass tracking-wide">
             {t('license_badge')}
           </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-electricViolet ml-1 animate-pulse" />
         </motion.div>
 
         {/* Dual CTA row */}
@@ -94,38 +86,24 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center gap-4"
         >
           {/* Primary CTA */}
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0px 0px 25px rgba(0, 255, 255, 0.4)',
-              borderColor: 'rgba(0, 255, 255, 0.8)',
-            }}
-            whileTap={{ scale: 0.95 }}
+          <button
             onClick={() =>
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="glass-panel flex items-center gap-2 px-8 py-4 rounded-full border border-neonCyan/30 text-neonCyan font-mono uppercase tracking-widest cursor-pointer transition-colors"
+            className="flex items-center gap-2 px-6 py-3 rounded-sm bg-brass text-white font-mono text-sm cursor-pointer hover:bg-brass-light transition-colors"
           >
             {t('cta')}
-            <ArrowRight className="w-4 h-4" />
-          </motion.button>
+            <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+          </button>
 
           {/* Download CV */}
-          <motion.div
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0px 0px 20px rgba(138, 43, 226, 0.3)',
-            }}
-            whileTap={{ scale: 0.95 }}
+          <Link
+            href={`/${locale}/cv`}
+            className="flex items-center gap-2 px-6 py-3 rounded-sm border border-brass/40 text-brass-light dark:text-brass font-mono text-sm cursor-pointer hover:border-brass transition-colors"
           >
-            <Link
-              href={`/${locale}/cv`}
-              className="glass-panel flex items-center gap-2 px-8 py-4 rounded-full border border-electricViolet/30 text-electricViolet font-mono uppercase tracking-widest cursor-pointer transition-colors hover:border-electricViolet/60"
-            >
-              <Download className="w-4 h-4" />
-              {t('cta_cv')}
-            </Link>
-          </motion.div>
+            <Download className="w-4 h-4" />
+            {t('cta_cv')}
+          </Link>
         </motion.div>
       </div>
     </section>

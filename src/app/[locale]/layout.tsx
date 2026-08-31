@@ -1,15 +1,35 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import localFont from 'next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
+import Script from 'next/script';
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import Navbar from "@/components/ui/Navbar";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: '--font-space-grotesk' });
-const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: '--font-jetbrains-mono' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', preload: false });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk', preload: false });
+const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono', preload: false });
+
+const geSSTwo = localFont({
+  src: [
+    {
+      path: '../../../public/fonts/GE_SS_Two_Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/fonts/GE_SS_Two_Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-ge-ss-two',
+  display: 'swap',
+  preload: false, // only used on Arabic pages — don't preload globally
+});
 
 const META_TITLE = "Elsmoal | Backend Architect & CTO";
 const META_DESC =
@@ -122,22 +142,30 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={dir}
+      suppressHydrationWarning
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} ${geSSTwo.variable}`}
+    >
       <head>
-        <script
+        <Script
+          id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="beforeInteractive"
         />
       </head>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} font-sans transition-colors duration-300 dark:bg-void dark:text-ghostWhite bg-white text-gray-900`}
+        className="font-sans transition-colors duration-300 dark:bg-void dark:text-ghostWhite bg-white text-gray-900"
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <Navbar />
             {children}
             <FloatingWidgets />
+            <div id="modal-root" />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

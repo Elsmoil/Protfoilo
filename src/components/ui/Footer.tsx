@@ -6,13 +6,14 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
+// Nav link ids matched to Nav translation keys
 const navLinks = [
-  { label: 'Home', id: 'hero' },
-  { label: 'Skills', id: 'engine-room' },
-  { label: 'Services', id: 'services' },
-  { label: 'Projects', id: 'featured-missions' },
-  { label: 'About', id: 'philosophy' },
-  { label: 'Contact', id: 'contact' },
+  { key: 'hero',        id: 'hero' },
+  { key: 'engine',      id: 'engine-room' },
+  { key: 'services',    id: 'services' },
+  { key: 'missions',    id: 'featured-missions' },
+  { key: 'philosophy',  id: 'philosophy' },
+  { key: 'contact',     id: 'contact' },
 ];
 
 const socials = [
@@ -20,24 +21,25 @@ const socials = [
     label: 'GitHub',
     href: 'https://github.com/Elsmoil',
     icon: <FaGithub className="w-5 h-5" />,
-    hoverColor: 'hover:text-neonCyan',
+    hoverColor: 'hover:text-brass',
   },
   {
     label: 'LinkedIn',
-    href: 'https://ae.linkedin.com/in/elsmoal-',
+    href: 'https://ae.linkedin.com/in/elsmoal',
     icon: <FaLinkedin className="w-5 h-5" />,
     hoverColor: 'hover:text-[#0A66C2]',
   },
   {
     label: 'Email',
-    href: 'mailto:contact@elsmoal.com',
+    href: 'mailto:contact@elsmoal.me',
     icon: <Mail className="w-5 h-5" />,
-    hoverColor: 'hover:text-electricViolet',
+    hoverColor: 'hover:text-brass-light dark:hover:text-brass',
   },
 ];
 
 export default function Footer() {
   const t = useTranslations('Footer');
+  const tNav = useTranslations('Nav');
   const year = new Date().getFullYear();
   const params = useParams();
   const locale = (params?.locale as string) ?? 'en';
@@ -48,7 +50,7 @@ export default function Footer() {
   return (
     <footer className="relative w-full z-10 border-t border-black/10 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.02] backdrop-blur-sm">
       {/* Top glow line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-electricViolet/50 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-brass/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-10">
@@ -61,16 +63,15 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="font-heading font-bold text-2xl flex items-center gap-2 mb-3">
-              <span className="text-electricViolet">{'//'}</span>
+              <span className="text-brass-light dark:text-brass">{'//'}</span>
               <span className="text-gray-900 dark:text-ghostWhite">Elsmoal</span>
             </div>
             <p className="font-mono text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
               {t('brand_tagline')}
             </p>
             {/* License badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-500/30 bg-green-500/5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="font-mono text-xs text-green-400">{t('license_short')}</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-brass/20 bg-brass/5">
+              <span className="font-mono text-xs text-brass-light dark:text-brass">{t('license_short')}</span>
             </div>
           </motion.div>
 
@@ -89,10 +90,10 @@ export default function Footer() {
                 <li key={link.id}>
                   <button
                     onClick={() => scrollTo(link.id)}
-                    className="font-mono text-sm text-gray-600 dark:text-gray-400 hover:text-neonCyan dark:hover:text-neonCyan transition-colors duration-200 text-left"
+                    className="font-mono text-sm text-gray-600 dark:text-gray-400 hover:text-brass-light dark:hover:text-brass transition-colors duration-200"
                   >
-                    <span className="text-electricViolet mr-1">›</span>
-                    {link.label}
+                    <span className="text-brass-light dark:text-brass mr-1">›</span>
+                    {tNav(link.key as Parameters<typeof tNav>[0])}
                   </button>
                 </li>
               ))}
@@ -125,20 +126,16 @@ export default function Footer() {
               ))}
             </ul>
             {/* Availability */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-neonCyan/20 bg-neonCyan/5 w-fit">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-              </span>
-              <span className="font-mono text-xs text-green-400">{t('available')}</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-brass/20 bg-brass/5 w-fit">
+              <span className="font-mono text-xs text-brass-light dark:text-brass">{t('available')}</span>
             </div>
             {/* CV Download */}
             <Link
               href={`/${locale}/cv`}
-              className="mt-4 flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400 hover:text-electricViolet dark:hover:text-neonCyan transition-colors duration-200"
+              className="mt-4 flex items-center gap-2 font-mono text-sm text-gray-500 dark:text-gray-400 hover:text-brass-light dark:hover:text-brass transition-colors duration-200"
             >
               <FileText className="w-4 h-4" />
-              <span>View / Download CV</span>
+              <span>{t('cv_link')}</span>
             </Link>
           </motion.div>
         </div>
@@ -155,9 +152,9 @@ export default function Footer() {
           </p>
           <p className="text-gray-400 dark:text-gray-600">
             {t('built_with')}{' '}
-            <span className="text-neonCyan">Next.js</span> ·{' '}
-            <span className="text-electricViolet">TypeScript</span> ·{' '}
-            <span className="text-neonCyan">Framer Motion</span>
+            <span className="text-brass">Next.js</span> ·{' '}
+            <span className="text-brass">TypeScript</span> ·{' '}
+            <span className="text-brass">Framer Motion</span>
           </p>
         </div>
       </div>

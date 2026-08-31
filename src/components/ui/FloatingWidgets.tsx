@@ -1,85 +1,31 @@
 'use client';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, TerminalSquare, X, Send } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 
 export default function FloatingWidgets() {
-  const [isBotOpen, setIsBotOpen] = useState(false);
-  const t = useTranslations('Widgets');
-
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
-
-      {/* نافذة التيرمنال المصغرة لبوت الذكاء الاصطناعي */}
-      <AnimatePresence>
-        {isBotOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="w-80 sm:w-96 rounded-xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-[0_0_30px_rgba(138,43,226,0.15)] backdrop-blur-xl"
-          >
-            {/* رأس التيرمنال */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/5">
-              <div className="flex items-center gap-2 text-gray-400 font-mono text-xs">
-                <TerminalSquare className="w-4 h-4 text-neonCyan" />
-                <span>{t('agent_title')}</span>
-              </div>
-              <button onClick={() => setIsBotOpen(false)} className="text-gray-400 hover:text-white transition-colors">
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* منطقة المحادثة */}
-            <div className="h-64 p-4 overflow-y-auto font-mono text-sm text-gray-300 flex flex-col gap-3">
-              <div className="bg-white/5 p-3 rounded-lg border border-white/5 w-11/12">
-                <span className="text-neonCyan">Agent:</span> {t('agent_greeting')}
-              </div>
-              {/* هنا ستظهر رسائل المستخدم لاحقاً */}
-            </div>
-
-            {/* شريط الإدخال */}
-            <div className="p-3 border-t border-white/10 bg-black/50 flex gap-2">
-              <input
-                type="text"
-                placeholder={t('input_placeholder')}
-                className="flex-1 bg-transparent border-none outline-none font-mono text-sm text-ghostWhite placeholder:text-gray-600"
-              />
-              <button className="text-electricViolet hover:text-neonCyan transition-colors">
-                <Send className="w-4 h-4" />
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* الأزرار الطافية */}
-      <div className="flex gap-3">
-        {/* زر بوت الذكاء الاصطناعي */}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setIsBotOpen(!isBotOpen)}
-          className="w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-electricViolet/30 text-electricViolet shadow-[0_0_15px_rgba(138,43,226,0.2)] hover:shadow-[0_0_25px_rgba(138,43,226,0.5)] transition-shadow bg-[#050505]/80"
-        >
-          <TerminalSquare className="w-6 h-6" />
-        </motion.button>
-
-        {/* زر الواتساب */}
-        <motion.a
-          href="https://wa.me/+971559264344"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-green-500/30 text-green-500 shadow-[0_0_15px_rgba(34,197,94,0.2)] hover:shadow-[0_0_25px_rgba(34,197,94,0.5)] transition-shadow bg-[#050505]/80 relative group"
-        >
-          <MessageCircle className="w-6 h-6" />
-          <span className="absolute -top-3 -right-3 text-[10px] bg-red-500 text-white px-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">TODO</span>
-        </motion.a>
-      </div>
-
-    </div>
+    <a
+      href="https://wa.me/971559264344"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full
+      bg-[#25D366] hover:bg-[#20BA5A] transition-colors duration-200
+      flex items-center justify-center shadow-lg"
+    >
+      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15
+        -.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475
+        -.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52
+        .149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207
+        -.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372
+        -.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2
+        5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085
+        1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.845L.057 23.083
+        a.75.75 0 00.921.921l5.238-1.468A11.955 11.955 0 0012 24c6.627 0 12-5.373
+        12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.523-5.205-1.432l-.374-.222-3.876
+        1.086 1.086-3.876-.222-.374A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10
+        4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+    </a>
   );
 }

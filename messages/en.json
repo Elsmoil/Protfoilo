@@ -9,11 +9,11 @@
     "contact": "Contact"
   },
   "Hero": {
-    "status": "System Online // Elsmoal S. Ibrahim",
+    "status": "Elsmoal S. Ibrahim",
     "title_1": "I build the",
     "title_highlight": "invisible engines",
     "title_2": "that power the future.",
-    "cta": "Initiate Sequence",
+    "cta": "View my work",
     "cta_cv": "Download CV",
     "availability": "Available for freelance contracts — Q3 2026",
     "license_badge": "Official Software Development Freelance License · Abu Dhabi, UAE · Verified",
@@ -21,16 +21,16 @@
     "credentials": "ALX SWE Graduate · ALX AI Career Essentials · Licensed Freelancer · Abu Dhabi, UAE"
   },
   "StatsStrip": {
-    "stat1": "Production Systems Shipped",
-    "stat2": "Certified (SWE + AI Essentials)",
-    "stat3": "Licensed Freelancer · Abu Dhabi",
-    "stat4": "@ Mulham AI"
+    "stat1": "Production systems shipped",
+    "stat2": "Certified in software engineering and AI",
+    "stat3": "Licensed freelancer, Abu Dhabi",
+    "stat4": "CTO at Mulham AI"
   },
   "Services": {
     "title": "B2B Engineering Services",
-    "comment": "// Available for freelance contracts, architectural consultations & SaaS builds...",
+    "comment": "Freelance contracts, architecture consulting, and SaaS builds.",
     "subtitle": "Officially licensed in Abu Dhabi. I deliver end-to-end, production-grade systems — not prototypes.",
-    "license_note": "🔐  Official Software Development Freelance License · Abu Dhabi, UAE",
+    "license_note": "Official Software Development Freelance License · Abu Dhabi, UAE",
     "s1_title": "Backend Architecture Consulting",
     "s1_desc": "Design and build rock-solid, high-concurrency backend systems. From API design and microservices decoupling to database optimisation and zero-trust security patterns — I architect systems that scale under real load.",
     "s2_title": "SaaS Multi-tenant Platforms",
@@ -39,15 +39,15 @@
     "s3_desc": "Self-hosted n8n orchestration, Python automation scripts, and omnichannel API integrations. I build intelligent workflow pipelines that eliminate manual overhead and connect your tools in real time.",
     "s4_title": "Security Audits & Cryptography",
     "s4_desc": "Implementation of AES/ECC hybrid encryption, steganographic data protection, RBAC policy design, and zero-trust architecture reviews. I build systems where security is a first-class citizen from day one.",
-    "cta_label": "Discuss this service",
-    "banner_title": "Ready to build something unbreakable?",
+    "cta_label": "Discuss on WhatsApp",
+    "banner_title": "Have a project in mind?",
     "banner_sub": "// Available for B2B contracts, retainers, and technical partnerships.",
     "banner_cta": "Start a Project"
   },
   "EngineRoom": {
-    "title": "The Engine Room",
-    "desc1": "// Accessing core stack and infrastructure parameters...",
-    "desc2": "Building the invisible engines that push data through the void.",
+    "title": "Stack",
+    "desc1": "The tools I build with.",
+    "desc2": "A backend-first stack, built for scale.",
     "cat1": "Core Architecture",
     "cat2": "Heavy Data & State",
     "cat3": "Real-time & Auth",
@@ -56,12 +56,12 @@
     "cat6": "AI & Automation"
   },
   "Philosophy": {
-    "title": "Engineering Philosophy",
+    "title": "About",
     "p1_1": "Hi, I'm",
     "p1_name": "Elsmoal S. Ibrahim",
     "p1_2": " — Independent Full-Stack & Backend Architect and CTO @ Mulham AI. I specialise in building highly scalable systems and secure cryptography projects designed to handle real-world production loads.",
     "p2": "Armed with an official Software Development Freelance License in Abu Dhabi and credentials as an ALX Software Engineering and AI Career Essentials graduate, my approach is practical: decouple systems, implement zero-trust security from day one, and write maintainable code that scales effortlessly. Whether it's processing real-time AI pipelines, building AES/ECC hybrid encryption with steganography, or orchestrating omnichannel automations via n8n — I build software engineered for heavy loads.",
-    "quote": "\"Architecture is not about the code you write, but about the systems you enable — invisible engines that power everything above them.\"",
+    "quote": "\"Good architecture is invisible. It just works, at scale, under load.\"",
     "val1_title": "End-to-End Execution",
     "val1_desc": "From cryptographic vaults to AI workflow orchestration — complete, deployable products.",
     "val2_title": "Scalable Architecture",
@@ -70,15 +70,15 @@
     "val3_desc": "Zero-trust, AES/ECC encryption, RBAC, and steganographic data protection."
   },
   "Contact": {
-    "title": "Comm-Link",
-    "desc1": "// Awaiting input...",
+    "title": "Get in touch",
+    "desc1": "Open to new work.",
     "desc2": "Ready to deploy the next architecture? Drop a secure line.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "send": "Send Transmission",
-    "links": "Direct Links",
-    "location": "Server Location",
+    "links": "Find me",
+    "location": "Based in",
     "city": "Abu Dhabi, UAE",
     "desc": "Let's build something unbreakable.",
     "cat_text": "I am currently open to engineering roles, architectural consultations, and freelance contracts. Whether you have a question about scalable backends, AI automations, or want to build a secure SaaS platform — my inbox is open.",
@@ -87,13 +87,10 @@
   "FeaturedMissions": {
     "title": "Featured Deployments",
     "subtitle": "A selection of secure, scalable, and automation-driven systems I've engineered.",
-    "comment": "// Accessing deployment logs and system architectures...",
-    "ciphervault_desc": "Built a hybrid security system combining AES + ECC cryptography with steganography for multilayer data protection. Encrypts content and hides it inside media to improve confidentiality.",
-    "tanseeq_desc": "Developed a TypeScript-first application focused on delivering a clean, maintainable app architecture and modern frontend workflows.",
-    "mulhamai_desc": "Implemented and managed an AI-focused application, centering on practical intelligent features, API-driven AI integration patterns, and high-availability deployments.",
-    "mulhamai_role": "Role: CTO — Chief Technology Officer",
-    "mithaq_desc": "Engineered a full-stack split architecture for a SaaS platform. Built a TypeScript-heavy structured frontend and a Python backend service layer with automation support and containerised deployment readiness.",
-    "linkedpro_desc": "Created a robust Python-based automation tool for LinkedIn workflows to streamline repetitive professional tasks and optimise processes."
+    "ciphervault_desc": "A full-stack steganography system that hides AES-256 encrypted text inside images using ML-ranked pixels and LSB embedding. Includes a FastAPI backend, Next.js frontend, and real-time quality metrics (PSNR, SSIM, BER). Built for a cybersecurity master's thesis.",
+    "mulhamai_desc": "An Arabic-first AI platform for building and selling digital products. Users describe an idea and the AI generates a complete product — name, content (2000+ words), pricing, and a marketing plan. Features an 8-step wizard, seller dashboard, Tap Payments integration, and a multi-stage AI pipeline (Mulhim Brain).",
+    "tanseeq_desc": "A service-platform web app with user authentication, profile management, an admin dashboard, and dynamic content exploration. Built with Next.js App Router, TypeScript, Appwrite, and Firebase. Deployed live on Vercel.",
+    "linkedpro_desc": "A LinkedIn automation platform powered by a multi-agent AI system. Handles AI-generated content, automated job applications with custom cover letters, network automation, and engagement analytics. Built with FastAPI, Python, MongoDB, and Playwright."
   },
   "Footer": {
     "brand_tagline": "Independent Backend Architect & CTO @ Mulham AI. Building the invisible engines that power the future.",
@@ -102,11 +99,12 @@
     "connect_heading": "Connect",
     "available": "Available for contracts",
     "rights": "All rights reserved.",
-    "built_with": "Built with"
+    "built_with": "Built with",
+    "cv_link": "View / Download CV"
   },
   "Widgets": {
-    "agent_title": "elsmoal-ai-agent ~ bash",
-    "agent_greeting": "Hello! I am Sami's AI assistant. How can I help you with backend architectures or project inquiries today?",
-    "input_placeholder": "Type your command..."
+    "agent_title": "Ask me anything",
+    "agent_greeting": "Hi, I'm Elsmoal's assistant. Ask me about backend architecture or my projects.",
+    "input_placeholder": "Type a message..."
   }
 }

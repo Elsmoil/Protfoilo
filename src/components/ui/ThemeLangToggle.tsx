@@ -25,7 +25,7 @@ export default function ThemeLangToggle() {
     <div className="flex gap-3">
       <button
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        className="glass-panel p-2.5 text-gray-400 hover:text-neonCyan transition-colors rounded-full bg-[#050505]/80"
+        className="glass-panel p-2.5 text-gray-400 hover:text-brass dark:hover:text-brass transition-colors rounded-sm"
         aria-label="Toggle Theme"
       >
         {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -33,7 +33,7 @@ export default function ThemeLangToggle() {
       
       <button
         onClick={toggleLang}
-        className="glass-panel px-3 py-2 flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-electricViolet transition-colors rounded-full bg-[#050505]/80"
+        className="glass-panel px-3 py-2 flex items-center gap-2 text-xs font-mono text-gray-400 hover:text-brass-light dark:hover:text-brass transition-colors rounded-sm"
       >
         <Languages className="w-3.5 h-3.5" />
         {locale === 'en' ? 'عربي' : 'EN'}
