@@ -10,7 +10,6 @@ import ThemeLangToggle from './ThemeLangToggle';
 
 export default function Navbar() {
   const { scrollY, scrollYProgress } = useScroll();
-  const [hidden, setHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const t = useTranslations('Nav');
@@ -20,10 +19,7 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     if (latest > previous && latest > 150) {
-      setHidden(true);
       setMobileOpen(false);
-    } else {
-      setHidden(false);
     }
     setIsScrolled(latest > 50);
   });
@@ -49,12 +45,6 @@ export default function Navbar() {
         style={{ scaleX: scrollYProgress }}
       />
       <motion.nav
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
           isScrolled 
             ? 'py-3 bg-white/90 dark:bg-void/80 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)]' 
@@ -73,7 +63,7 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex flex-1 justify-center">
-            <div className={`flex items-center gap-1 bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-md backdrop-blur-md shadow-sm dark:shadow-none ${locale === 'ar' ? 'flex-row-reverse' : ''}`}>
+            <div className={`flex items-center gap-1 bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-md backdrop-blur-md shadow-sm dark:shadow-none`}>
               {navItems.map((item) => (
                 <button
                   key={item.id}

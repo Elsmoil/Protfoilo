@@ -15,17 +15,7 @@ export default function Hero() {
 
       <div className="z-10 flex max-w-4xl flex-col items-center text-center">
 
-        {/* Availability pulse indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex items-center gap-2 mb-8 px-4 py-2 rounded-md border border-brass/20 bg-brass/5 backdrop-blur-sm"
-        >
-          <span className="font-mono text-xs text-brass-light dark:text-brass tracking-wide">
-            {t('availability')}
-          </span>
-        </motion.div>
+
 
         {/* Status line + h1 */}
         <motion.div
