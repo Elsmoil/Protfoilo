@@ -53,7 +53,7 @@ export default function Philosophy() {
                   <span className="font-mono text-xs text-brass-light dark:text-brass bg-brass/10 border border-brass/20 px-2 py-0.5 rounded-sm">
                     ALX AI Career Essentials
                   </span>
-                  <span className="font-mono text-xs text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 px-2 py-0.5 rounded-md">
+                  <span className="font-mono text-xs text-brass-light dark:text-brass bg-brass/10 border border-brass/20 px-2 py-0.5 rounded-sm">
                     Freelance License · Abu Dhabi
                   </span>
                 </div>
