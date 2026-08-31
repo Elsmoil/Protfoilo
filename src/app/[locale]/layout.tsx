@@ -34,7 +34,7 @@ const geSSTwo = localFont({
 const META_TITLE = "Elsmoal | Backend Architect & CTO";
 const META_DESC =
   "Elsmoal S. Ibrahim — Independent Full-Stack & Backend Architect, CTO @ Mulham AI. Building highly scalable systems, AES/ECC cryptography platforms, and AI-driven automation. Officially licensed freelancer in Abu Dhabi, UAE.";
-const META_URL = "https://elsmoal.com";
+const META_URL = "https://elsmoal.me";
 const OG_IMAGE = "/og-image.png";
 
 export const metadata: Metadata = {
