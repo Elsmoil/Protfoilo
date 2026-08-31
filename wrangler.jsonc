@@ -9,5 +9,15 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "elsmoal.me",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.elsmoal.me",
+      "custom_domain": true
+    }
+  ]
 }
