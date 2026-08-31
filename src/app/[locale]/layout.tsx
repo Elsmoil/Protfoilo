@@ -149,6 +149,7 @@ export default async function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} ${geSSTwo.variable}`}
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: 'window.__name = (func, name) => { try { Object.defineProperty(func, "name", { value: name, configurable: true }); } catch (e) {} return func; };' }} />
         <Script
           id="json-ld"
           type="application/ld+json"
