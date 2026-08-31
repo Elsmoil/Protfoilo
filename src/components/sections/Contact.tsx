@@ -44,14 +44,14 @@ export default function Contact() {
           {/* Contact links */}
           <div className="flex flex-col gap-5">
             <a
-              href="mailto:contact@elsmoal.me"
+              href="mailto:contact@elscomputers.software"
               onMouseEnter={() => setHoveredLink('email')}
               onMouseLeave={() => setHoveredLink(null)}
               className="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-brass-light dark:hover:text-brass transition-colors duration-200 w-fit group"
             >
               <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
               <span className={`font-mono text-sm ${hoveredLink === 'email' ? 'underline decoration-brass underline-offset-4' : ''}`}>
-                contact@elsmoal.me
+                contact@elscomputers.software
               </span>
             </a>
 
@@ -70,7 +70,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://ae.linkedin.com/in/elsmoal"
+              href="https://www.linkedin.com/in/elsmoal-"
               target="_blank"
               rel="noopener noreferrer"
               onMouseEnter={() => setHoveredLink('linkedin')}
@@ -79,7 +79,7 @@ export default function Contact() {
             >
               <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
               <span className={`font-mono text-sm ${hoveredLink === 'linkedin' ? 'underline decoration-[#0A66C2] underline-offset-4' : ''}`}>
-                linkedin.com/in/elsmoal
+                linkedin.com/in/elsmoal-
               </span>
             </a>
           </div>

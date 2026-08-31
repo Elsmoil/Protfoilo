@@ -37,14 +37,14 @@ export default function CVPage() {
 
           {/* Contact row */}
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm text-gray-600 font-mono">
-            <a href="mailto:contact@elsmoal.me" className="flex items-center gap-1 hover:text-gray-900 transition-colors">
-              <Mail className="w-3 h-3" /> contact@elsmoal.me
+            <a href="mailto:contact@elscomputers.software" className="flex items-center gap-1 hover:text-gray-900 transition-colors">
+              <Mail className="w-3 h-3" /> contact@elscomputers.software
             </a>
             <span className="flex items-center gap-1">
               <MapPin className="w-3 h-3" /> Al Ain, Abu Dhabi, UAE
             </span>
-            <a href="https://ae.linkedin.com/in/elsmoal" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gray-900 transition-colors">
-              <FaLinkedin className="w-3 h-3" /> linkedin.com/in/elsmoal
+            <a href="https://www.linkedin.com/in/elsmoal-" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gray-900 transition-colors">
+              <FaLinkedin className="w-3 h-3" /> linkedin.com/in/elsmoal-
             </a>
             <a href="https://github.com/Elsmoil" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gray-900 transition-colors">
               <FaGithub className="w-3 h-3" /> github.com/Elsmoil

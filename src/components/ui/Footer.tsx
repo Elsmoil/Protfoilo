@@ -25,13 +25,13 @@ const socials = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://ae.linkedin.com/in/elsmoal',
+    href: 'https://www.linkedin.com/in/elsmoal-',
     icon: <FaLinkedin className="w-5 h-5" />,
     hoverColor: 'hover:text-[#0A66C2]',
   },
   {
     label: 'Email',
-    href: 'mailto:contact@elsmoal.me',
+    href: 'mailto:contact@elscomputers.software',
     icon: <Mail className="w-5 h-5" />,
     hoverColor: 'hover:text-brass-light dark:hover:text-brass',
   },
