@@ -9,7 +9,7 @@ export default function FloatingWidgets() {
       aria-label="Chat on WhatsApp"
       className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full
       bg-[#25D366] hover:bg-[#20BA5A] transition-colors duration-200
-      flex items-center justify-center shadow-lg"
+      flex items-center justify-center shadow-lg print:hidden"
     >
       <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15

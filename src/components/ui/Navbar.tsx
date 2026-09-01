@@ -41,11 +41,11 @@ export default function Navbar() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-brass z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-brass z-[60] origin-left print:hidden"
         style={{ scaleX: scrollYProgress }}
       />
       <motion.nav
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 print:hidden ${
           isScrolled 
             ? 'py-3 bg-white/90 dark:bg-void/80 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)]' 
             : 'py-4 bg-transparent'
