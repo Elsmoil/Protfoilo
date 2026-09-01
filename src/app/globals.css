@@ -34,6 +34,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "locl" 0;
   }
   body {
     @apply bg-paper text-ink dark:bg-void dark:text-ghostWhite antialiased selection:bg-brass selection:text-white;
